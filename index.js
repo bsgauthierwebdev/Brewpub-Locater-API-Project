@@ -1,6 +1,6 @@
 'use strict';
 
-const searchUrl = "https://api.openbrewerydb.org/breweries?by_type=brewpub";
+const searchUrl = "https://api.openbrewerydb.org/breweries";
 
 var brewpubList = null;
 
@@ -35,6 +35,7 @@ function displaySortedList(brewpubList) {
       }
     $("#results-list").append(
             `<li><h3><a href="${brewpubList[i].website_url}" target="_blank">${brewpubList[i].name}</a></h3>
+            <p>Brewery type: ${brewpubList[i].brewery_type}</p>
             <p>${brewpubList[i].street}</p>
             <p>${brewpubList[i].city}, ${brewpubList[i].state} ${brewpubList[i].postal_code}</p>
             <p>Distance from start: ${brewpubList[i].distance} kilometers</p>
@@ -74,6 +75,7 @@ function displayResults(responseJson) {
       responseJson[i].distance = null;
         $("#results-list").append(
             `<li><h3><a href="${responseJson[i].website_url}" target="_blank">${responseJson[i].name}</a></h3>
+            <p>Brewery type: ${responseJson[i].brewery_type}</p>
             <p>${responseJson[i].street}</p>
             <p>${responseJson[i].city}, ${responseJson[i].state} ${responseJson[i].postal_code}</p>
             <input type="submit" value="Let's start here!" data-index="${i}">
@@ -94,7 +96,7 @@ function getBrewpubList(city, state) {
         };
 
     const queryString = formatQueryParams(params)
-    const url = searchUrl + "&" + queryString;
+    const url = searchUrl + "?" + queryString;
 
     console.log(url);
 
