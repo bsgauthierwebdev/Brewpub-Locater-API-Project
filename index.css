@@ -3,7 +3,29 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  font-family: 'Trebuchet MS', sans-serif;
+  color: black;
+  padding: 10px;
+  background-image: url("images/background-image.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+header h1 {
+  margin: 0;
+  font-family: Bookman, "Times New Roman", serif;
+  font-size: 48px;
+  text-align: center;
+  display: block;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+h3 {
+  font-family: Garamond, "Times New Roman", serif;
 }
 
 .container {

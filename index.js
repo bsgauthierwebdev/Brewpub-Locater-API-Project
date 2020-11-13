@@ -21,8 +21,21 @@ function displayResultsPath(e) {
     console.log(i);
     brewpubList[i].distance = getDistanceFromLatLonInKm(brewpubList[index].latitude, brewpubList[index].longitude, brewpubList[i].latitude, brewpubList[i].longitude);
   };
-  brewpubList.sort((a,b) => a.distance - b.distance);
-  displaySortedList(brewpubList);
+brewpubList.sort(function(a, b) { 
+    console.log(a.distance, b.distance);
+    if (typeof a.distance == "undefined")
+    {
+      return 1;
+    }
+    
+    if (typeof b.distance == "undefined")
+    {
+      return -1;
+    }
+    
+    return a.distance - b.distance
+    } );
+      displaySortedList(brewpubList);
 }
 
 //Displays the sorted list on the page
