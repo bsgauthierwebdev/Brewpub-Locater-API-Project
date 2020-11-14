@@ -52,3 +52,7 @@ h3 {
 .hidden {
   display: none;
 }
+
+ul {
+  list-style-type: none;
+}
