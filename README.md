@@ -11,7 +11,7 @@ The initial start page with empty search parameters.
 ![Opening Screen](https://raw.githubusercontent.com/bsgauthierwebdev/Brewpub-Locater-API-Project/master/screenshots/screenshot-opening.jpg)
 
 The list populated based on the user's search criteria.
-https://raw.githubusercontent.com/bsgauthierwebdev/Brewpub-Locater-API-Project/master/screenshots/search-list-1.jpg
+<img src="https://raw.githubusercontent.com/bsgauthierwebdev/Brewpub-Locater-API-Project/master/screenshots/search-list-1.jpg">
 
 More results listed below.
 https://raw.githubusercontent.com/bsgauthierwebdev/Brewpub-Locater-API-Project/master/screenshots/search-list-2.jpg
