@@ -9,12 +9,13 @@ For this project, I've mainly utilized Javascript and JQuery for the functionali
 
 The initial start page with empty search parameters.
 ![Opening Screen](https://raw.githubusercontent.com/bsgauthierwebdev/Brewpub-Locater-API-Project/master/screenshots/screenshot-opening.jpg)
+https://github.com/BsgauthierWebDev/Brewpub-Locater-API-Project/tree/master/Screenshots
 
 The list populated based on the user's search criteria.
 <img src="https://raw.githubusercontent.com/bsgauthierwebdev/Brewpub-Locater-API-Project/master/screenshots/search-list-1.jpg">
 
 More results listed below.
-https://raw.githubusercontent.com/bsgauthierwebdev/Brewpub-Locater-API-Project/master/screenshots/search-list-2.jpg
+https://github.com/BsgauthierWebDev/Brewpub-Locater-API-Project/tree/master/Screenshots/search-list-2.jpg
 
 The results list sorted after selecting one of the locations.
 https://raw.githubusercontent.com/bsgauthierwebdev/Brewpub-Locater-API-Project/master/screenshots/sorted-list.jpg
