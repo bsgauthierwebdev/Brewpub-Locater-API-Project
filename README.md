@@ -18,7 +18,6 @@ More results listed below.
 <img src="https://github.com/BsgauthierWebDev/Brewpub-Locater-API-Project/tree/master/Screenshots/search-list-2.jpg" alt="Expanded search list">
 
 The results list sorted after selecting one of the locations.
-https://raw.githubusercontent.com/bsgauthierwebdev/Brewpub-Locater-API-Project/master/screenshots/sorted-list.jpg
-
+<img src="./screenshots/sorted-list.jpg/>
 
 
