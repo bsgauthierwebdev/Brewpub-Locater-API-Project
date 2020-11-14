@@ -4,14 +4,24 @@
 
 body {
   margin: 0;
-  font-family: 'Trebuchet MS', sans-serif;
-  color: black;
-  padding: 10px;
-  background-image: url("images/background-image.jpg");
+  }
+
+.background {
+  margin: 0;
+  background-image: url(https://www.thedailymeal.com/sites/default/files/story/2017/shutterstock_270707900.jpg);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  z-index: 1;
+}
+
+.text {
+  margin: 0;
+  font-family: 'Trebuchet MS', sans-serif;
+  color: black;
+  padding: 10px;
+  z-index: 2;
 }
 
 header h1 {
