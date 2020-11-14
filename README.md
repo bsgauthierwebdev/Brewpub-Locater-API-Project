@@ -15,7 +15,7 @@ The list populated based on the user's search criteria.
 <img src="https://raw.githubusercontent.com/bsgauthierwebdev/Brewpub-Locater-API-Project/master/screenshots/search-list-1.jpg">
 
 More results listed below.
-<img src="https://raw.githubusercontent.com/BsgauthierWebDev/Brewpub-Locater-API-Project/tree/master/Screenshots/search-list-2.jpg" alt="Expanded search list">
+<img src="https://github.com/BsgauthierWebDev/Brewpub-Locater-API-Project/tree/master/Screenshots/search-list-2.jpg" alt="Expanded search list">
 
 The results list sorted after selecting one of the locations.
 https://raw.githubusercontent.com/bsgauthierwebdev/Brewpub-Locater-API-Project/master/screenshots/sorted-list.jpg
