@@ -8,15 +8,15 @@ For this project, I've mainly utilized Javascript and JQuery for the functionali
 # Screenshots
 
 The initial start page with empty search parameters.
-<img src="https://github.com/BsgauthierWebDev/Brewpub-Locater-API-Project/blob/master/Screenshots/screenshot-opening.jpg">
+<img src="https://github.com/BsgauthierWebDev/Brewpub-Locater-API-Project/blob/master/Screenshots/screenshot-opening.jpg" alt="Opening screen with empty search parameters">
 
 The list populated based on the user's search criteria.
-<img src="https://github.com/BsgauthierWebDev/Brewpub-Locater-API-Project/blob/master/Screenshots/search-list-1.jpg">
+<img src="https://github.com/BsgauthierWebDev/Brewpub-Locater-API-Project/blob/master/Screenshots/search-list-1.jpg" alt="Search parameters filled and results populated on the screen">
 
 More results listed below.
-<img src="https://github.com/BsgauthierWebDev/Brewpub-Locater-API-Project/blob/master/Screenshots/search-list-2.jpg">
+<img src="https://github.com/BsgauthierWebDev/Brewpub-Locater-API-Project/blob/master/Screenshots/search-list-2.jpg" alt="Expanded view of search results">
 
 The results list sorted after selecting one of the locations.
-<img src="./screenshots/sorted-list.jpg">
+<img src="https://github.com/BsgauthierWebDev/Brewpub-Locater-API-Project/blob/master/Screenshots/sorted-list.jpg" alt="Resorted list with distance from starting point displayed">
 
 
