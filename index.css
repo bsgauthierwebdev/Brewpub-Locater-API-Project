@@ -42,9 +42,13 @@ header h1 {
   padding-bottom: 15px;
 }
 
+h2 {
+  font-family: Bookman, "Times New Roman", serif;
+  text-align: center;
+}
+
 h3 {
   font-family: Garamond, "Times New Roman", serif;
-  text-align: center;
 }
 
 .container {
