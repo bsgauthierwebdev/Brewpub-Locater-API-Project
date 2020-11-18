@@ -9,21 +9,21 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <div class="container">
-      <section class="background">
+    <section class="container">
+      <section id="background-image" class="background">
       </section>
-      <div class="text">
+      <section class="text">
       <header>
         <h1>Get a list of breweries and brewpubs in your area</h1>
         </header>
         <p>Plan a new type of weekend. Enter your city and/or state below and get a list of brewpubs, breweries, cideries and bottling houses in your area. Check out their websites, and pick one. We'll give you a new, sorted list of the locations with the closest proximity, so you can plan an outing for your group. Just remember to bring a designated driver! (And be sure to pick up their dinner tab as well!)</p>
         <form id="js-form">
           <section id="city">
-            <label for="search-term">City</label>
+            <label for="js-search-city">City</label>
             <input type="text" name="search-term" id="js-search-city">
           </section>
           <section id="state">
-            <label for="js-state-search">State</label>
+            <label for="js-search-state">State</label>
                 <select name="state" id="js-search-state">
                     <option value="" selected="selected">Select a State</option>
                     <option value="Alabama">Alabama</option>
@@ -90,8 +90,8 @@
               <li>Sample Input</li>
             </ul>
         </section>
-        </div>
-    </div>
+        </section>
+    </section>
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="index.js"></script>
 </body>

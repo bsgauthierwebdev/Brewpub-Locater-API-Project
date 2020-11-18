@@ -2,27 +2,81 @@
 
 const searchUrl = "https://api.openbrewerydb.org/breweries";
 
-var brewpubList = null;
+var brewpubList = [];
 
 function formatQueryParams(params) {
     const queryItems = Object.keys(params)
     .map(key => `${key}=${params[key]}`)
     return queryItems.join("&");
 }
+//Display Functions below
+
+//Clears any existing results on the page and displays the results of the search as line items in an unorganized list.
+function displayResults(responseJson) {
+    $("#results").removeClass("hidden");
+    $("#results-list").empty();
+    brewpubList = [];
+    let newVar = 0;
+    for (let i = 0; i < responseJson.length; i++) {
+      //Skips objects with no latitude value
+      if (!responseJson[i].latitude) {
+        continue;
+      }
+
+      responseJson[i].distance = null;
+        $("#results-list").append(
+            `<li><hr><h3><a href="${responseJson[i].website_url}" target="_blank">${responseJson[i].name}</a></h3>
+            <p>Brewery type: ${responseJson[i].brewery_type}</p>
+            <p>${responseJson[i].street}</p>
+            <p>${responseJson[i].city}, ${responseJson[i].state} ${responseJson[i].postal_code}</p>
+            <input type="submit" value="Let's start here!" data-index="${newVar}">
+            </li>`
+        );
+        
+      brewpubList.push(responseJson[i]);
+      newVar = newVar+1;
+      };
+$('#results-list input[type="submit"]').click(function(e) { displayResultsPath(e); });
+
+if ($("#results-list").is(":empty")) {
+      $("#results").text("Sorry, we couldn't find anything in that area. Please enter a different city and try again.");
+        }
+}
+
+//Displays the sorted list on the page
+function displaySortedList(brewpubList) {
+  $('#results-list').empty();
+  for (let i = 0; i < brewpubList.length; i++) {
+    //Skips objects with no latitude value
+      if (!brewpubList[i].latitude) {
+        continue;
+      }
+    $("#results-list").append(
+            `<li><hr><h3><a href="${brewpubList[i].website_url}" target="_blank">${brewpubList[i].name}</a></h3>
+            <p>Brewery type: ${brewpubList[i].brewery_type}</p>
+            <p>${brewpubList[i].street}</p>
+            <p>${brewpubList[i].city}, ${brewpubList[i].state} ${brewpubList[i].postal_code}</p>
+            <p>Distance from start: ${brewpubList[i].distance} kilometers</p>
+            <input type="submit" value="Start here instead!" data-index="${i}">
+            </li>`
+     )};
+     $('#results-list input[type="submit"]').click(function(e) { displayResultsPath(e); });
+}
 
 //Displays the results of the distance function in the console.
 function displayResultsPath(e) {
   let index = $(e.target).data('index');
-  console.log('clicked');
+  console.log('clicked '+ index);
+  window.scrollTo(0, 0);
   for (let i = 0; i < brewpubList.length; i++) {
     if (!brewpubList[i].latitude) {
         continue;
       }
-    console.log(i);
     brewpubList[i].distance = getDistanceFromLatLonInKm(brewpubList[index].latitude, brewpubList[index].longitude, brewpubList[i].latitude, brewpubList[i].longitude);
   };
 brewpubList.sort(function(a, b) { 
-    console.log(a.distance, b.distance);
+  //The console.log in line 79 is not necessary, but I'd like to leave it as pseudocode if comparative values are desired.
+    //console.log(a.distance, b.distance);
     if (typeof a.distance == "undefined")
     {
       return 1;
@@ -36,25 +90,6 @@ brewpubList.sort(function(a, b) {
     return a.distance - b.distance
     } );
       displaySortedList(brewpubList);
-}
-
-//Displays the sorted list on the page
-function displaySortedList(brewpubList) {
-  $('#results-list').empty();
-  for (let i = 0; i < brewpubList.length; i++) {
-    //Skips objects with no latitude value
-      if (!brewpubList[i].latitude) {
-        continue;
-      }
-    $("#results-list").append(
-            `<li><h3><a href="${brewpubList[i].website_url}" target="_blank">${brewpubList[i].name}</a></h3>
-            <p>Brewery type: ${brewpubList[i].brewery_type}</p>
-            <p>${brewpubList[i].street}</p>
-            <p>${brewpubList[i].city}, ${brewpubList[i].state} ${brewpubList[i].postal_code}</p>
-            <p>Distance from start: ${brewpubList[i].distance} kilometers</p>
-            <input type="submit" value="Start here instead!" data-index="${i}">
-            </li>`
-     )};
 }
 
 //This function was found through research and used to replace the requirement of an API key from Google and their geolocater. (Suggestion came from project evaluator.) Function calculates the distance, in km, of each additional location from the "Let's start here" location
@@ -76,31 +111,6 @@ function deg2rad(deg) {
   return deg * (Math.PI/180)
 }
 
-//Clears any existing results on the page and displays the results of the search as line items in an unorganized list.
-function displayResults(responseJson) {
-    $("#results").removeClass("hidden");
-    $("#results-list").empty();
-    for (let i = 0; i < responseJson.length; i++) {
-      //Skips objects with no latitude value
-      if (!responseJson[i].latitude) {
-        continue;
-      }
-      responseJson[i].distance = null;
-        $("#results-list").append(
-            `<li><h3><a href="${responseJson[i].website_url}" target="_blank">${responseJson[i].name}</a></h3>
-            <p>Brewery type: ${responseJson[i].brewery_type}</p>
-            <p>${responseJson[i].street}</p>
-            <p>${responseJson[i].city}, ${responseJson[i].state} ${responseJson[i].postal_code}</p>
-            <input type="submit" value="Let's start here!" data-index="${i}">
-            </li>`
-        )};
-      //console.log(responseJson);
-      //Quick & Dirty way to house the results so we can call in a separate function.
-      brewpubList = responseJson;
-    $('#results-list').click('input[type="submit"]', function(e) { displayResultsPath(e); });
-      //displayResultsPath(4);
-};
-
 //Takes the search parameters, input by the user, and calls the function to display the results on the page.
 function getBrewpubList(city, state) {
     const params = {
@@ -120,7 +130,6 @@ function getBrewpubList(city, state) {
             $("#js-error-message").text(`Something isn't right: ${err.message}`);
         });
 }
-
 
 //Watch Form function, enters the search criteria and calls the Get Brewpub List function
 function watchForm() {
