@@ -23,7 +23,7 @@ body {
 .text {
   margin: auto;
   font-family: 'Trebuchet MS', sans-serif;
-  text-align: justify;
+  text-align: auto;
   color: black;
   padding-left: 10px;
   padding-right: 10px;
@@ -44,6 +44,7 @@ header h1 {
 
 h3 {
   font-family: Garamond, "Times New Roman", serif;
+  text-align: center;
 }
 
 .container {
