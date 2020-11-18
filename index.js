@@ -41,8 +41,7 @@ $('#results-list input[type="submit"]').click(function(e) { displayResultsPath(e
 if ($("#results-list").is(":empty")) {
       $("#results").text("Sorry, we couldn't find anything in that area. Please enter a different city and try again.");
         }
-$('#results-list input[type="submit"]').click(function(e) { displayResultsPath(e); });
-
+watchForm();
 }
 
 //Displays the sorted list on the page
