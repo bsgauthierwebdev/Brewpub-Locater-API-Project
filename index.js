@@ -39,9 +39,8 @@ function displayResults(responseJson) {
 $('#results-list input[type="submit"]').click(function(e) { displayResultsPath(e); });
 
 if ($("#results-list").is(":empty")) {
-      $("#results").text("Sorry, we couldn't find anything in that area. Please enter a different city and try again.");
-        }
-watchForm();
+      $("#results-list").text("Sorry, we couldn't find anything in that area. Please enter a different city and try again.");}
+
 }
 
 //Displays the sorted list on the page
